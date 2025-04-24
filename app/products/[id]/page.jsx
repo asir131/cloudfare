@@ -3,45 +3,49 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
 import api from "../../utils/api";
 import { fetchProducts } from '../../store/productSlice';
-import { useSearchParams } from 'next/navigation'
-export default function ProductDetail({ params}) {
-  
-  
-  // const dispatch = useDispatch();
-  const { id } = params;
-console.log("iddd",id);
-// const { products } = useSelector((state) => state.product);
-// console.log("products",name);
 
-// useEffect(() => {
-//     dispatch(fetchProducts());
-//   }, [dispatch]);
+
+
+export default function ProductDetail({params}) {
+
+
+  
   const [product, setProduct] = useState(null);
+  const { id} = params;
+console.log("iddd",id);
+
+  const dispatch = useDispatch();
+  
+const { products } = useSelector((state) => state.product);
+console.log("products1",products);
+
+useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   useEffect(() => {
-    
-
-    api.get("/all/product/get")
-      .then((res) => {
-        
-        
-        const found = res.data.data.data.find((p) => String(p.id) === id);
+    const found = products?.data?.find((p) => String(p.id) === id);
         console.log("found",found);
         setProduct(found);
-      })
-      .catch((err) => console.error(err));
-  }, [id]);
-
-
-  
-
-  // useEffect(() => {
-  //   const found = res?.data?.data?.find((p) => String(p.id) === id);
-  //       console.log("found",found);
-  //       setProduct(found);
   
       
+  }, [id,products]);
+ 
+
+  // useEffect(() => {
+  //   api.get("/all/product/get")
+  //     .then((res) => {
+  //       const found = res.data.data.data.find((p) => String(p.id) === id);
+  //       console.log("found",found);
+  //       setProduct(found);
+  //     })
+  //     .catch((err) => console.error(err));
   // }, [id]);
+
+
+  
+
+  
 
   if (!product) return <p className="text-center mt-10">Loading...</p>;
 

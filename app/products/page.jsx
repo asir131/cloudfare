@@ -16,7 +16,7 @@ export default function Home() {
 
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.product);
-console.log("products",products);
+console.log("products from all",products);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -30,10 +30,7 @@ console.log("products",products);
       {products?.data?.map((product) =>( 
        
         
-       <Link key={product.id} href={{
-        pathname: `/products/${product.id}`,
-        query: { products }
-      }}>
+       <Link key={product.id} href={`/products/${product.id}`}>
           <div  className="border p-4  rounded cursor-pointer hover:shadow-lg">
           
             <img
