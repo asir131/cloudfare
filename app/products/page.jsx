@@ -5,15 +5,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import Link from 'next/link';
 import { fetchProducts } from '../store/productSlice.js';
 import AOS from 'aos';
+import "aos/dist/aos.css";
 export default function Home() {
   
  
 useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.product);
-console.log("products from all",products);
+
 
   useEffect(() => {
     dispatch(fetchProducts());
