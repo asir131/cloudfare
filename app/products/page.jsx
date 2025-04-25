@@ -47,6 +47,17 @@ console.log("products from all",products);
 </button>
 
     </Link>
+
+    <Link className='ml-5' href="/products/order">
+    <button
+  data-aos="zoom-in"
+  data-aos-duration="800"
+  className="bg-white text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-800 ease-in-out transform hover:scale-105"
+>
+  Order Now
+</button>
+
+    </Link>
   </div>
 
   

@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Async thunk to fetch products
 export const fetchProducts = createAsyncThunk(
   'product/fetchProducts',
   async () => {
@@ -26,7 +25,7 @@ const productSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.products = action.payload.data; // Based on the API structure
+        state.products = action.payload.data; 
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;

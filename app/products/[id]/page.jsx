@@ -5,7 +5,8 @@ import React from 'react';
 import { fetchProducts } from '../../store/productSlice';
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import { HiOutlineBackspace } from "react-icons/hi2";
+import { redirect } from 'next/navigation'
 
 
 
@@ -44,6 +45,9 @@ useEffect(() => {
 
 <div className='bg-gradient-to-r from-gray-700 via-gray-900 to-black min-h-screen overflow-hidden  '>
 <div className='mt-20 mb-20'>
+  <h1 className='text-white text-3xl font-[900] flex items-center justify-center mb-10'><HiOutlineBackspace className="mr-10 cursor-pointer" onClick={()=>{
+      redirect('/products')
+    }} size={25}/>Single Product Details</h1>
 <div
   className=" p-6  max-w-2xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] cursor-pointer"
   data-aos="fade-up"
