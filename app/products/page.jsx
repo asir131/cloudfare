@@ -69,7 +69,7 @@ console.log("products from all",products);
       data-aos="fade-down"
       className="text-3xl md:text-4xl font-bold text-center text-white mb-30"
     >
-      Choose Your Favourite Style
+      Choose Your Clothing Style
     </h2>
 
     <div data-aos="zoom-in-up" className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
