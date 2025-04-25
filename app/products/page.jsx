@@ -38,12 +38,14 @@ console.log("products from all",products);
       Handpicked collections to match every vibe and occasion.
     </p>
     <Link href="#products">
-      <button
-        data-aos="zoom-in"
-        className="bg-white text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300"
-      >
-        Explore Now
-      </button>
+    <button
+  data-aos="zoom-in"
+  data-aos-duration="800"
+  className="bg-white text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 hover:shadow-xl transition-all duration-800 ease-in-out transform hover:scale-105"
+>
+  Explore Now
+</button>
+
     </Link>
   </div>
 
@@ -54,7 +56,7 @@ console.log("products from all",products);
   <div id="products" className="mt-20">
     <h2
       data-aos="fade-down"
-      className="text-3xl md:text-4xl font-bold text-center mb-10 text-white"
+      className="text-3xl md:text-4xl font-bold text-center text-white mb-30"
     >
       Choose Your Favourite Style
     </h2>
